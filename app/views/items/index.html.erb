@@ -1,20 +1,23 @@
-<h1>Listing items</h1>
+<h1>あなたの ToDo</h1>
 
 <table>
   <tr>
-    <th>Title</th>
     <th>Done</th>
-    <th>User</th>
+    <th>Title</th>
+    <th>Tag</th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%=h item.title %></td>
     <td><%=h item.done %></td>
-    <td><%=h item.user_id %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h item.title %></td>
+    <td>
+      <% item.tag_list do |tag| %>
+        <%=h tag %>
+      <% end %>
+    </td>
+    <td><%= link_to "編集", edit_item_path(item) %></td>
+    <td><%= link_to "削除", item, :confirm => "削除してもいいですか？", :method => :delete %></td>
   </tr>
 <% end %>
 </table>

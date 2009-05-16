@@ -222,3 +222,114 @@ Migrating to ActsAsTaggableMigration (20090516233214)
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:50:24) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 1172ms (View: 94, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-05-17 08:50:47) [GET]
+Redirected to http://localhost:3000/
+Completed in 125ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:50:48) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-17 08:50:48) [GET]
+Rendering sessions/new
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:50:57) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-17 08:50:57) [GET]
+Rendering sessions/new
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-05-17 08:51:05) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"tjsplbTlO0wJ9h79BPEe9YtC6NyXw5guJzeVM3WRLsY=", "login"=>"tnakamura", "password"=>"taka1031"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'tnakamura') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 140ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:51:06) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 235ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:54:55) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+
+ActionView::TemplateError (undefined method `tag_list' for #<Array:0x4bdc5c8>) on line #15 of app/views/items/index.html.erb:
+12:     <td><%=h item.done %></td>
+13:     <td><%=h item.title %></td>
+14:     <td>
+15:       <% @items.tag_list do |tag| %>
+16:         <%=h tag %>
+17:       <% end %>
+18:     </td>
+
+    app/views/items/index.html.erb:15
+    app/views/items/index.html.erb:10:in `each'
+    app/views/items/index.html.erb:10
+    app/controllers/items_controller.rb:14:in `index'
+
+Rendered rescues/_trace (250.0ms)
+Rendered rescues/_request_and_response (15.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:55:29) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+Completed in 516ms (View: 313, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:56:25) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+Completed in 375ms (View: 46, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#show (for 127.0.0.1 at 2009-05-17 08:56:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+Rendering template within layouts/items
+Rendering items/show
+Completed in 219ms (View: 32, DB: 0) | 200 OK [http://localhost/items/1]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:56:38) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+Completed in 172ms (View: 31, DB: 0) | 200 OK [http://localhost/items]
