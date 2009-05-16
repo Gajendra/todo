@@ -51,3 +51,124 @@ Migrating to CreateItems (20090516225320)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("items")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:16:43) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1109ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-17 08:16:45) [GET]
+Rendering sessions/new
+Completed in 125ms (View: 109, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-17 08:16:56) [GET]
+
+ActionController::RoutingError (No route matches "/session/signup" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-05-17 08:17:11) [GET]
+  Parameters: {"id"=>"signup"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-05-17 08:17:29) [GET]
+Rendering users/new
+Completed in 500ms (View: 31, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-05-17 08:17:49) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"taka1031", "password"=>"taka1031", "login"=>"tnakamura", "email"=>"griefworker@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"3PWPh/IAOPCR7dhnl2PsKYl+AFzlBGmIOn+iXhqMimY="}
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'tnakamura') LIMIT 1[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'griefworker@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "email", "created_at") VALUES('', '51aa5aaeca9a64a7bfed07b5656f74bf9a86a776', '2009-05-16 23:17:49', 'b9c2e279285bd570b12f0e7964e609b4506a5d90', NULL, NULL, 'tnakamura', 'griefworker@gmail.com', '2009-05-16 23:17:49')[0m
+Redirected to http://localhost:3000/
+Completed in 594ms (DB: 0) | 302 Found [http://localhost/users]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:17:50) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 703ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:18:04) [GET]
+  [4;35;1mUser Load (16.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 250ms (View: 16, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing ItemsController#new (for 127.0.0.1 at 2009-05-17 08:18:10) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/items
+Rendering items/new
+Completed in 172ms (View: 31, DB: 0) | 200 OK [http://localhost/items/new]
+
+
+Processing ItemsController#create (for 127.0.0.1 at 2009-05-17 08:18:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3PWPh/IAOPCR7dhnl2PsKYl+AFzlBGmIOn+iXhqMimY=", "item"=>{"done"=>"0", "title"=>"はしご下の寸法を測る", "user_id"=>"1"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Create (16.0ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "done", "user_id", "created_at") VALUES('2009-05-16 23:18:33', 'はしご下の寸法を測る', 'f', 1, '2009-05-16 23:18:33')[0m
+Redirected to http://localhost:3000/items/1
+Completed in 344ms (DB: 16) | 302 Found [http://localhost/items]
+
+
+Processing ItemsController#show (for 127.0.0.1 at 2009-05-17 08:18:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+Rendering template within layouts/items
+Rendering items/show
+Completed in 235ms (View: 31, DB: 0) | 200 OK [http://localhost/items/1]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:18:37) [GET]
+  [4;36;1mUser Load (16.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 516ms (View: 16, DB: 16) | 200 OK [http://localhost/items]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-05-17 08:18:52) [GET]
+Redirected to http://localhost:3000/
+Completed in 125ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:18:52) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-05-17 08:18:53) [GET]
+Rendering sessions/new
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-05-17 08:19:04) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"8hQBW00hfsH8y+WmFcHJ5Tpf9Cl6X1lCB5/YOP92Zio=", "login"=>"tnakamura", "password"=>"taka1031"}
+  [4;36;1mUser Load (16.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'tnakamura') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 172ms (DB: 16) | 302 Found [http://localhost/session]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 08:19:05) [GET]
+  [4;35;1mUser Load (15.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+Completed in 219ms (View: 31, DB: 15) | 200 OK [http://localhost/]

@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  # ログイン必須
+  before_filter :login_required
+
   # GET /items
   # GET /items.xml
   def index
