@@ -5,7 +5,11 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
+    if params[:tag]
+      @items = Item.find_tagged_with(params[:tag])
+    else
+      @items = Item.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,11 +48,12 @@ class ItemsController < ApplicationController
   # POST /items.xml
   def create
     @item = Item.new(params[:item])
+    @item.done = false
 
     respond_to do |format|
       if @item.save
         flash[:notice] = 'Item was successfully created.'
-        format.html { redirect_to(@item) }
+        format.html { redirect_to(items_url) }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new" }
@@ -65,7 +70,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update_attributes(params[:item])
         flash[:notice] = 'Item was successfully updated.'
-        format.html { redirect_to(@item) }
+        format.html { redirect_to(items_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
