@@ -1,23 +1,19 @@
-<h1>New item</h1>
+<h1>新しい ToDo</h1>
 
 <% form_for(@item) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <%= f.label :title %><br />
+  <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :done %><br />
-    <%= f.check_box :done %>
+  <%= f.label :tag %><br />
+  <%= f.text_field :tag_list %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+  <%= f.submit "作成" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', items_path %>
+<%= link_to "戻る", items_path %>

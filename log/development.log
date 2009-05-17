@@ -333,3 +333,198 @@ Rendering template within layouts/items
 Rendering items/index
   [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
 Completed in 172ms (View: 31, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#new (for 127.0.0.1 at 2009-05-17 08:59:40) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/items
+Rendering items/new
+ERROR: compiling _run_erb_app47views47items47new46html46erb RAISED compile error
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: syntax error, unexpected $undefined, expecting ')'
+@output_buffer.concat(( link_to "�߂�", items_path ).to_s); @output_buffer.concat "\n"
+                                                                                    ^
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: unterminated string meets end of file
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47items47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>\220V\202\265\202\242 ToDo</h1>\n"
+@output_buffer.concat "\n"
+ form_for(@item) do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label :title ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.text_field :title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label :tag ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.text_field :tag_list ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.submit "�쐬" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to "�߂�", items_path ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19:in `compile!'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/InstantRails-2.0/rails_apps/todo/app/controllers/items_controller.rb:36:in `new'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+C:/InstantRails-2.0/ruby/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+C:/InstantRails-2.0/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/InstantRails-2.0/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: syntax error, unexpected $undefined, expecting ')'
+@output_buffer.concat(( link_to "�߂�", items_path ).to_s); @output_buffer.concat "\n"
+                                                                                    ^
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: unterminated string meets end of file
+C:/InstantRails-2.0/rails_apps/todo/app/views/items/new.html.erb:19: syntax error, unexpected $end, expecting ')') on line #19 of app/views/items/new.html.erb:
+16:   </p>
+17: <% end %>
+18: 
+19: <%= link_to "�߂�", items_path %>
+
+    app/views/items/new.html.erb:19:in `compile!'
+    app/controllers/items_controller.rb:36:in `new'
+
+Rendered rescues/_trace (172.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ItemsController#new (for 127.0.0.1 at 2009-05-17 08:59:53) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/items
+Rendering items/new
+Completed in 266ms (View: 63, DB: 0) | 200 OK [http://localhost/items/new]
+
+
+Processing ItemsController#create (for 127.0.0.1 at 2009-05-17 09:00:22) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"tjsplbTlO0wJ9h79BPEe9YtC6NyXw5guJzeVM3WRLsY=", "item"=>{"title"=>"余分なものを処分する", "tag_list"=>"home"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Create (46.0ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "done", "user_id", "created_at") VALUES('2009-05-17 00:00:23', '余分なものを処分する', 'f', NULL, '2009-05-17 00:00:23')[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'home') LIMIT 1[0m
+  [4;36;1mTag Exists (0.0ms)[0m   [0;1mSELECT "tags".id FROM "tags" WHERE ("tags"."name" = 'home') LIMIT 1[0m
+  [4;35;1mTag Create (0.0ms)[0m   [0mINSERT INTO "tags" ("name") VALUES('home')[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO "taggings" ("tag_id", "taggable_type", "taggable_id", "created_at") VALUES(1, 'Item', 2, '2009-05-17 00:00:23')[0m
+Redirected to http://localhost:3000/items
+Completed in 703ms (DB: 46) | 302 Found [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:00:23) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 157ms (View: 32, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:00:49) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 187ms (View: 47, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#edit (for 127.0.0.1 at 2009-05-17 09:00:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 2) [0m
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 250ms (View: 46, DB: 0) | 200 OK [http://localhost/items/2/edit]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:00:56) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 171ms (View: 31, DB: 0) | 200 OK [http://localhost/items]
