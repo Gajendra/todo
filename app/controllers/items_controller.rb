@@ -6,9 +6,11 @@ class ItemsController < ApplicationController
   # GET /items.xml
   def index
     if params[:tag]
-      @items = Item.find_tagged_with(params[:tag])
+      @items = Item.find_tagged_with(params[:tag],
+                                     :conditions => ["user_id = ?", current_user.id])
     else
-      @items = Item.all
+      @items = Item.find(:all,
+                         :conditions => ["user_id = ?", current_user.id])
     end
 
     respond_to do |format|
@@ -49,6 +51,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(params[:item])
     @item.done = false
+    @item.user_id = current_user.id
 
     respond_to do |format|
       if @item.save
