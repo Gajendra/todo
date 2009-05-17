@@ -1,24 +1,23 @@
-<h1>Editing item</h1>
+<h1>ToDo の編集</h1>
 
 <% form_for(@item) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <%= f.label :title %><br />
+  <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :done %><br />
-    <%= f.check_box :done %>
+  <%= f.label :tag %><br />
+  <%= f.text_field :tag_list %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+  <%= f.label :done %><br />
+  <%= f.check_box :done %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+  <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to '戻る', items_path %>
