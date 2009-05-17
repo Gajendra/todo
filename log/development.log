@@ -568,3 +568,106 @@ Rendering items/index
   [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
   [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
 Completed in 156ms (View: 15, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#edit (for 127.0.0.1 at 2009-05-17 09:03:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+Rendering template within layouts/items
+Rendering items/edit
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+Completed in 172ms (View: 31, DB: 0) | 200 OK [http://localhost/items/1/edit]
+
+
+Processing ItemsController#update (for 127.0.0.1 at 2009-05-17 09:03:54) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"tjsplbTlO0wJ9h79BPEe9YtC6NyXw5guJzeVM3WRLsY=", "id"=>"1", "item"=>{"done"=>"0", "title"=>"はしご下の寸法を測る", "tag_list"=>"home"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;35;1mTag Load (16.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'home') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO "taggings" ("tag_id", "taggable_type", "taggable_id", "created_at") VALUES(1, 'Item', 1, '2009-05-17 00:03:54')[0m
+Redirected to http://localhost:3000/items
+Completed in 391ms (DB: 16) | 302 Found [http://localhost/items/1]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:03:55) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 375ms (View: 32, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:04:01) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 219ms (View: 32, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:04:06) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 187ms (View: 31, DB: 0) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:04:36) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (16.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 281ms (View: 31, DB: 16) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:05:21) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (16.0ms)[0m   [0;1mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;35;1mTag Load (16.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 219ms (View: 15, DB: 32) | 200 OK [http://localhost/items]
+
+
+Processing ItemsController#edit (for 127.0.0.1 at 2009-05-17 09:05:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+Rendering template within layouts/items
+Rendering items/edit
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+Completed in 391ms (View: 219, DB: 0) | 200 OK [http://localhost/items/1/edit]
+
+
+Processing ItemsController#update (for 127.0.0.1 at 2009-05-17 09:05:28) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"tjsplbTlO0wJ9h79BPEe9YtC6NyXw5guJzeVM3WRLsY=", "id"=>"1", "item"=>{"done"=>"0", "title"=>"はしご下の寸法を測る", "tag_list"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;35;1mTagging Load (0.0ms)[0m   [0mSELECT * FROM "taggings" WHERE ("taggings".taggable_id = 1 AND "taggings".taggable_type = 'Item' AND (tag_id IN (1))) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags"."id" = 1) [0m
+  [4;35;1mTagging Destroy (0.0ms)[0m   [0mDELETE FROM "taggings" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/items
+Completed in 391ms (DB: 0) | 302 Found [http://localhost/items/1]
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-05-17 09:05:29) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mItem Load (0.0ms)[0m   [0mSELECT * FROM "items" [0m
+Rendering template within layouts/items
+Rendering items/index
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 1)) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_type = 'Item') AND ("taggings".taggable_id = 2)) [0m
+Completed in 219ms (View: 31, DB: 0) | 200 OK [http://localhost/items]

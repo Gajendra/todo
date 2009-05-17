@@ -12,7 +12,7 @@
     <td><%=h item.done %></td>
     <td><%=h item.title %></td>
     <td>
-      <% item.tag_list do |tag| %>
+      <% item.tag_list.each do |tag| %>
         <%=h tag %>
       <% end %>
     </td>
